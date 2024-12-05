@@ -1,0 +1,67 @@
+.bookmark-tab {
+    padding: 20px;
+}
+
+.question-list {
+    position: relative;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 16px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    max-height: 400px; /* 최대 높이를 설정하여 스크롤바가 나타날 수 있도록 */
+    overflow-y: auto; /* 세로 스크롤바 자동 표시 */
+}
+
+
+.question-item {
+    background: #f9f5ec;
+    padding: 15px;
+    margin-top: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.question-item h4 {
+    margin: 0 0 10px;
+}
+/* 기본 상태: "클릭" 표시, 정답은 숨김 */
+.hidden-answer,
+.hidden-explanation {
+    cursor: pointer;
+    color: gray;
+    font-weight: bold;
+}
+
+.real-answer,
+.real-explanation {
+    color: green; /* 정답 텍스트는 초록색으로 강조 */
+    font-weight: bold;
+}
+
+.action-buttons {
+    text-align: right; /* 버튼을 오른쪽 정렬 */
+    margin-top: 10px; /* 버튼과 위 요소 간격 */
+}
+
+.bookmark-remove-button {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 8px 12px;
+    cursor: pointer;
+    font-size: 0.875rem;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* 크기 변화를 위한 transition 추가 */
+    display: inline-block; /* float 대신 inline-block으로 변경 */
+}
+
+.bookmark-remove-button:hover {
+    background-color: #cc0000; /* hover 시 더 진한 빨간색 */
+    transform: scale(1.05); /* hover 시 버튼 확대 효과 */
+}
+

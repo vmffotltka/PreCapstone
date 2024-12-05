@@ -1,0 +1,265 @@
+.mock-solve-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    height: 650px;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+    z-index: 1000;
+}
+
+.mock-solve-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+.mock-solve-modal.active {
+    transform: translate(-50%, -50%) scale(1); /* 커지면서 중앙으로 */
+    opacity: 1; /* 보이게 설정 */
+}
+
+/* mock-solve-header 밀착 */
+.mock-solve-header {
+    padding: 10px;
+    background-color: #f5f5f5;
+    border-bottom: 1px solid #ddd;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.mock-solve-timer {
+    font-size: 1.2rem;
+    color: gray;
+    margin-right: 20px; /* 타이머 오른쪽 여백 */
+    font-weight: bold;
+}
+
+.mock-solve-question-box {
+    margin-bottom: 15px; /* 문제 간 공백 줄이기 */
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+.mock-solve-options .mock-solve-option {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.mock-solve-options label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.mock-solve-answer {
+    margin-top: 10px;
+}
+
+.mock-solve-input {
+    width: 50%;
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.mock-solve-footer {
+    flex: 0 0 auto;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid #ddd;
+    background-color: #f5f5f5;
+    position: sticky;
+}
+
+.mock-solve-cancel-button,
+.mock-solve-submit-button {
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.mock-solve-cancel-button {
+    background-color: #dc3545;
+    color: white;
+}
+.mock-solve-cancel-button:hover {
+    background-color: #b10012;
+}
+
+.mock-solve-cancel-button:disabled {
+    background-color: #ffcdd2; /* 비활성화 상태 색상 */
+    color: #f44336;
+    cursor: not-allowed;
+}
+
+.mock-solve-submit-button {
+    background-color: #4caf50; /* 기본 색상 */
+    color: white;
+}
+.mock-solve-submit-button:hover {
+    background-color: #009205; /* 기본 색상 */
+}
+
+.mock-solve-submit-button:disabled {
+    background-color: #c8e6c9; /* 비활성화 상태 색상 */
+    color: #4caf50;
+    cursor: not-allowed;
+}
+
+.mock-solve-close-button {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+/* mock-solve-close-button hover 효과 */
+.mock-solve-close-button:hover {
+    background-color: #e0e0e0; /* hover 시 회색 */
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.mock-solve-body {
+    display: flex;
+    height: 100%; /* 모달 높이 채우기 */
+    padding: 10px;
+}
+
+.mock-solve-sidebar {
+    position: absolute;
+    top: calc(100% - 511px); /* 헤더 아래에 고정 */
+    left: 0px;
+    background-color: #f9f9f9; /* 밝은 배경 */
+    padding: 10px;
+    border-right: 1px solid #ddd; /* 오른쪽 경계선 */
+    width: 120px; /* 고정된 너비 */
+    height: calc(100% - 200px); /* 헤더 높이를 제외 */
+    overflow-y: auto; /* 스크롤 활성화 */
+    padding: 10; /* 공백 제거 */
+    box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.1); /* 약간의 그림자 */
+    display: flex;
+    flex: 1;
+}
+
+.mock-solve-checklist {
+    flex: 0 0 auto; /* 높이 고정 */
+    width: 80px;
+    padding: 10px;
+    border-right: 1px solid #ddd;
+    background-color: #fafafa;
+    overflow-y: auto;
+}
+
+.mock-solve-checklist li {
+    margin-bottom: 5px;
+    padding: 5px;
+    border-radius: 3px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.mock-solve-checklist li.correct {
+    background-color: #d4edda; /* 연한 초록색 */
+    color: #155724; /* 초록색 글자 */
+}
+
+.mock-solve-checklist li.incorrect {
+    background-color: #f8d7da; /* 연한 빨간색 */
+    color: #721c24; /* 빨간색 글자 */
+}
+/* mock-solve-content 문제 푸는 영역 밀착 */
+.mock-solve-content {
+    flex: 1;
+    margin-left: 150px; /* 사이드바만큼 이동 */
+    padding: 0px; /* 문제 영역에 약간의 여백 */
+    overflow-y: auto; /* 세로 스크롤 활성화 */
+    height: 435px; /* 헤더 높이를 제외 */
+}
+.mock-solve-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* 어두운 배경 */
+    z-index: 999; /* 모달 뒤에 배치 */
+    opacity: 0; /* 기본 상태에서 투명 */
+    transition: opacity 0.3s ease-in-out; /* 애니메이션 */
+}
+.mock-solve-modal-overlay.active {
+    opacity: 1; /* 활성화 상태 */
+}
+
+.feedback {
+    margin-top: 30px;
+    margin-bottom: 10px;
+    padding-right: 50px; /* 버튼을 위한 오른쪽 공간 확보 */
+}
+
+.feedback.correct {
+    position: relative !important;
+    color: #4caf50; /* 초록색 */
+    font-weight: bold; /* 두껍게 */
+}
+
+.feedback.incorrect {
+    position: relative !important;
+    color: #f44336; /* 빨간색 */
+    font-weight: bold; /* 두껍게 */
+}
+
+.correct-answer {
+    color: #000; /* 정답 텍스트는 검정색 */
+    font-weight: normal;
+    margin-top: 5px;
+}
+
+.feedback p {
+    color: #000; /* Feedback 텍스트는 항상 검정색 */
+    font-weight: normal; /* 기본 글자 굵기 */
+}
+
+.mock-solve-bookmark-button {
+    position: relative !important;
+    top: -20px; /* 피드백 창 바로 위로 이동 */
+    float: right;
+    border: none;
+    border-radius: 5px;
+    background-color: #f8eaad;
+    color: #333;
+    border: 1px solid #ccc;
+    padding: 5px 10px;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.mock-solve-bookmark-button.bookmarked {
+    font-weight: bold;
+    background-color: #ffc107; /* 북마크된 상태 */
+    color: #fff;
+    border: 1px solid #ffa000;
+}
+
+.mock-solve-bookmark-button:hover {
+    background-color: #fcd631;
+}

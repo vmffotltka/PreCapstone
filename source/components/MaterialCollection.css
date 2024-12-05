@@ -1,0 +1,166 @@
+/* 기본 레이아웃 설정 */
+.material-collection {
+    padding: 20px;
+}
+
+.material-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-height: 400px;
+    overflow-y: auto;
+    padding-right: 15px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+/* Material Item 기본 레이아웃 (수평 배치) */
+.material-item {
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    background-color: #f9f5ec;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: box-shadow 0.3s ease;
+}
+
+.material-item:hover {
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.material-content {
+    flex: 1;
+    padding-right: 15px;
+}
+
+.material-title {
+    font-size: 1rem;
+    font-weight: bold;
+    margin: 0;
+    color: #333;
+}
+
+.material-description {
+    margin: 8px 0 0;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.material-actions {
+    display: flex;
+    gap: 10px;
+}
+
+/* 버튼 스타일 */
+.small-button {
+    padding: 6px 12px;
+    font-size: 0.85rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.small-button:hover {
+    transform: scale(1.05);
+}
+
+.delete-button {
+    background-color: #e74c3c !important;
+    color: white !important;
+    border: none;
+    border-radius: 4px;
+    padding: 6px 12px;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.delete-button:hover {
+    background-color: #c0392b !important;
+}
+
+.generate-button {
+    background-color: #007bff;
+    color: white;
+}
+
+.generate-button:hover {
+    background-color: #0056b3;
+}
+
+.solve-button {
+    background-color: #28a745;
+    color: white;
+}
+
+.solve-button:hover {
+    background-color: #218838;
+}
+
+.history-button {
+    background-color: #17a2b8;
+    color: white;
+}
+
+.history-button:hover {
+    background-color: #117a8b;
+}
+
+.material-file-path {
+    font-size: 0.9rem;
+    color: #666;
+    margin: 8px 0;
+    word-wrap: break-word;
+}
+
+.edit-button {
+    background-color: #73ceff !important;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 6px 12px;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.edit-button:hover {
+    background-color: #1c6e6e !important;
+    transform: scale(1.05);
+}
+
+.small-button:disabled, .edit-button:disabled {
+    background-color: #ccc;
+    color: #666;
+    cursor: not-allowed;
+}
+
+
+/* 화면 크기가 줄어들 때 (예: 최대 너비 768px 이하) 세로 배치 */
+@media (max-width: 768px) {
+    .material-list {
+        padding: 10px; /* 내부 여백 줄이기 */
+    }
+
+    .material-item {
+        flex-direction: column; /* 세로로 배치 */
+        padding: 10px; /* 각 항목의 패딩 줄이기 */
+    }
+
+    .material-content {
+        padding-right: 0; /* 오른쪽 여백 제거 */
+        margin-bottom: 10px; /* 내용과 버튼 사이 여백 */
+    }
+
+    .material-actions {
+        flex-direction: column; /* 버튼을 세로로 배치 */
+        align-items: stretch; /* 버튼들을 가로로 늘려서 정렬 */
+        gap: 5px; /* 버튼 간 간격 좁히기 */
+    }
+}
