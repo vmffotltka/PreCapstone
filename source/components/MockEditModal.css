@@ -1,0 +1,80 @@
+.mock-edit-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+.mock-edit-modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+    padding: 20px;
+    z-index: 1000;
+    width: 90%;
+    max-width: 400px;
+}
+
+.mock-edit-title {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.mock-edit-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.mock-edit-label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.mock-edit-input,
+.mock-edit-textarea {
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.mock-edit-actions {
+    display: flex;
+    justify-content: space-between;
+}
+
+.mock-edit-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.mock-edit-save {
+    background-color: #28a745;
+    color: white;
+}
+
+.mock-edit-save:hover {
+    background-color: #218838;
+}
+
+.mock-edit-delete {
+    background-color: #dc3545;
+    color: white;
+}
+
+.mock-edit-delete:hover {
+    background-color: #c82333;
+}

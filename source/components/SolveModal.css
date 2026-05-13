@@ -1,0 +1,268 @@
+/* 배경 어둡게 처리 */
+.solve-modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* 어두운 반투명 배경 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000; /* 모달보다 뒤에 배치되도록 설정 */
+}
+
+.solve-modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    width: 70%; /* 크기 확장 */
+    height: 500px; /* 화면 높이의 80% */
+    max-width: 90%;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    animation: grow 0.3s ease-in-out;
+}
+
+.solve-modal h2 {
+    background-color: #f0f8ff;
+    padding: 10px 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+@keyframes grow {
+    from {
+        transform: translate(-50%, -60%) scale(0.9);
+        opacity: 0.5;
+    }
+    to {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+}
+
+.solve-modal-header {
+    background-color: #f0f8ff;
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.solve-modal-header h2 {
+    font-size: 1.5rem;
+    color: #333;
+    margin: 0;
+}
+
+.solve-modal-header span {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #007bff;
+}
+
+/* 리스트 부분 */
+.solve-modal-content {
+    flex-grow: 1; /* 화면 대부분 차지 */
+    margin-bottom: 20px;
+}
+
+.question-list {
+    height: 370px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.question-item {
+    text-align: left;
+    background-color: #f9f9f9;
+    margin-bottom: 10px;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative; /* 북마크 버튼 위치 조정을 위해 */
+}
+
+.question-item h4 {
+    margin: 0 0 10px;
+}
+
+.bookmark-button {
+    position: absolute; /* 절대 위치로 문제 상단에 고정 */
+    bottom: 10px; /* 문제 박스의 하단으로 이동 */
+    right: 10px;
+    padding: 5px 10px;
+    font-size: 0.9rem;
+    background-color: #ffc107;
+    color: #000;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.bookmark-button.bookmarked {
+    background-color: #ffa500;
+    color: white;
+}
+
+.bookmark-button:hover {
+    background-color: #ffc107;
+}
+
+.answer-section {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.answer-section input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.answer-section label {
+    font-size: 1rem;
+    margin-right: 10px;
+}
+
+.answer-section input {
+    flex: 1; /* 입력창 크기를 줄이기 */
+    max-width: 300px; /* 최대 폭 제한 */
+    padding: 5px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.solve-modal-footer {
+    display: flex;
+    justify-content: space-between;
+    flex-shrink: 0;
+    padding-top: 10px;
+}
+
+/* 닫기 버튼 */
+.close-button {
+    position: absolute !important;
+    top: 10px !important;
+    right: 10px !important;
+    height: 35px !important;
+    background: none !important;
+    border: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close-edit-button {
+    position: absolute !important;
+    top: 10px !important;
+    right: 10px !important;
+    height: 35px !important;
+    background: none !important;
+    border: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close-button:hover {
+    background-color: #820000 !important; /* 어두운 빨간색 */
+}
+
+/* 모달 하단에 정렬 */
+.solve-modal-footer {
+    display: flex;
+    justify-content: space-between; /* 버튼들을 양쪽 끝으로 정렬 */
+    padding: 10px 0 0; /* 위쪽 패딩 추가 */
+    margin-top: 20px; /* 상단과의 간격 */
+    border-top: 1px solid #ccc; /* 상단 구분선 */
+}
+
+/* 제출 버튼 */
+.submit-button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff; /* 파란색 배경 */
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+    background-color: #0056b3;
+}
+
+/* 답 확인하기 버튼 */
+.check-answer-button {
+    margin-top: 10px;
+    padding: 8px 15px;
+    font-size: 0.9rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.check-answer-button:hover {
+    background-color: #0056b3;
+}
+
+.feedback-section {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #f1f1f1;
+    border-radius: 5px;
+    font-size: 0.9rem;
+}
+/* 문제 삭제 버튼 스타일 */
+.delete-button {
+    
+    margin-top: 10px;
+    padding: 8px 15px;
+    font-size: 0.9rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-left: 10px; /* 간격 추가 */
+}
+
+.delete-button:hover {
+    background-color: #cc0000;
+}
+.feedback {
+    margin-top: 10px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+  }
+  
